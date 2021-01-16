@@ -1,0 +1,99 @@
+@mixin basic-font-settings {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.coins-filter {
+  display: flex;
+
+  padding: 0 15px;
+
+  background-color: var(--coins-filter-bg-color);
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    flex-grow: 1;
+  }
+
+  &__item {
+    display: block;
+
+    padding: 15px 0;
+
+    @include basic-font-settings;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+
+    transition: .5s ease;
+
+    border-left: 1px solid #dfdfdf;
+
+    &:nth-child(1) {
+      width: 10%;
+
+      &:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+    }
+
+    &:nth-child(2) {
+      width: 12%;
+    }
+
+    &:nth-child(3) {
+      width: 10%;
+    }
+
+    &:nth-child(4) {
+      width: 14%;
+    }
+
+    &:nth-child(5) {
+      width: 14%;
+    }
+
+    &:nth-child(6) {
+      width: 15%;
+    }
+
+    &:nth-child(7) {
+      width: 8%;
+    }
+
+    &:nth-child(8) {
+      width: 8%;
+    }
+
+    &:nth-child(9) {
+      width: 8%;
+
+      border-right: 1px solid #dfdfdf;
+    }
+
+    &:hover {
+      background-color: rgb(194, 194, 194);
+
+      cursor: pointer;
+
+      transition: .5s ease;
+    }
+
+    &--active {
+      background-color: rgb(194, 194, 194);
+
+      &:hover {
+        background-color: rgb(180, 180, 180);
+      }
+    }
+
+  }
+}

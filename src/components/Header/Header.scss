@@ -1,0 +1,69 @@
+@mixin basic-font-settings {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-grow: 1;
+
+  margin: 0;
+  padding: 10px 15px;
+
+  background-color: var(--header-bg-color);
+
+  &__items {
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include basic-font-settings;
+  }
+}
+
+.item {
+
+  &__icon {
+    display: block;
+
+    width: 45px;
+    height: 45px;
+  }
+
+  &__title {
+    display: block;
+    margin-top: 5px;
+
+    font-size: 17px;
+    letter-spacing: 0.5px;
+  }
+
+  &__figure {
+    display: block;
+
+    margin-top: 5px;
+    padding: 6px 11px;
+
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    background-color: rgb(231, 231, 231);
+
+    border: 1px solid rgb(114, 114, 114);
+    border-radius: 25px;
+
+    &--updating {
+      filter: blur(5px);
+    }
+  }
+}

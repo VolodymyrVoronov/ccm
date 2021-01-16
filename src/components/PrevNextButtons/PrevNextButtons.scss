@@ -1,0 +1,59 @@
+@mixin basic-font-settings {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.prev-next-block {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+
+  margin: 5px 5px 5px 0;
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-grow: 1;
+
+    @include basic-font-settings;
+    font-weight: 700;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+    padding: 10px 25px;
+
+    @include basic-font-settings;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    border: 1px solid rgb(170, 170, 170);
+    outline: none;
+
+    transition: .5s ease-in-out;
+
+    &:hover {
+      background-color: rgb(207, 207, 207);
+      cursor: pointer;
+
+      transition: .5s ease-in-out;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      cursor: default;
+    }
+
+    &--prev {
+      margin-right: 5px;
+    }
+  }
+}
