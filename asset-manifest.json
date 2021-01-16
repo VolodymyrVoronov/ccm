@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ccm/static/css/main.f5fa4fd9.chunk.css",
+    "main.css": "/ccm/static/css/main.b0d34d12.chunk.css",
     "main.js": "/ccm/static/js/main.77e50bb0.chunk.js",
     "main.js.map": "/ccm/static/js/main.77e50bb0.chunk.js.map",
     "runtime-main.js": "/ccm/static/js/runtime-main.4cd80439.js",
@@ -10,7 +10,7 @@
     "static/js/3.5050ebcd.chunk.js": "/ccm/static/js/3.5050ebcd.chunk.js",
     "static/js/3.5050ebcd.chunk.js.map": "/ccm/static/js/3.5050ebcd.chunk.js.map",
     "index.html": "/ccm/index.html",
-    "static/css/main.f5fa4fd9.chunk.css.map": "/ccm/static/css/main.f5fa4fd9.chunk.css.map",
+    "static/css/main.b0d34d12.chunk.css.map": "/ccm/static/css/main.b0d34d12.chunk.css.map",
     "static/js/2.24817bbc.chunk.js.LICENSE.txt": "/ccm/static/js/2.24817bbc.chunk.js.LICENSE.txt",
     "static/media/24h-volume-icon-04.23fec9f8.svg": "/ccm/static/media/24h-volume-icon-04.23fec9f8.svg",
     "static/media/btc-dominance-icon-05.236bdce1.svg": "/ccm/static/media/btc-dominance-icon-05.236bdce1.svg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.4cd80439.js",
     "static/js/2.24817bbc.chunk.js",
-    "static/css/main.f5fa4fd9.chunk.css",
+    "static/css/main.b0d34d12.chunk.css",
     "static/js/main.77e50bb0.chunk.js"
   ]
 }
