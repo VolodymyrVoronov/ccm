@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/ccm/static/css/main.f5fa4fd9.chunk.css",
+    "main.js": "/ccm/static/js/main.77e50bb0.chunk.js",
+    "main.js.map": "/ccm/static/js/main.77e50bb0.chunk.js.map",
+    "runtime-main.js": "/ccm/static/js/runtime-main.4cd80439.js",
+    "runtime-main.js.map": "/ccm/static/js/runtime-main.4cd80439.js.map",
+    "static/js/2.24817bbc.chunk.js": "/ccm/static/js/2.24817bbc.chunk.js",
+    "static/js/2.24817bbc.chunk.js.map": "/ccm/static/js/2.24817bbc.chunk.js.map",
+    "static/js/3.5050ebcd.chunk.js": "/ccm/static/js/3.5050ebcd.chunk.js",
+    "static/js/3.5050ebcd.chunk.js.map": "/ccm/static/js/3.5050ebcd.chunk.js.map",
+    "index.html": "/ccm/index.html",
+    "static/css/main.f5fa4fd9.chunk.css.map": "/ccm/static/css/main.f5fa4fd9.chunk.css.map",
+    "static/js/2.24817bbc.chunk.js.LICENSE.txt": "/ccm/static/js/2.24817bbc.chunk.js.LICENSE.txt",
+    "static/media/24h-volume-icon-04.23fec9f8.svg": "/ccm/static/media/24h-volume-icon-04.23fec9f8.svg",
+    "static/media/btc-dominance-icon-05.236bdce1.svg": "/ccm/static/media/btc-dominance-icon-05.236bdce1.svg",
+    "static/media/cryptocurrencies-icon-01.5c3367af.svg": "/ccm/static/media/cryptocurrencies-icon-01.5c3367af.svg",
+    "static/media/market-capitalization-icon-03.5a38e4ba.svg": "/ccm/static/media/market-capitalization-icon-03.5a38e4ba.svg",
+    "static/media/markets-icon-02.9c1fd514.svg": "/ccm/static/media/markets-icon-02.9c1fd514.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4cd80439.js",
+    "static/js/2.24817bbc.chunk.js",
+    "static/css/main.f5fa4fd9.chunk.css",
+    "static/js/main.77e50bb0.chunk.js"
+  ]
+}
