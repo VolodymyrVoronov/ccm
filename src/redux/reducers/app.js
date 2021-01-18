@@ -73,69 +73,69 @@ const appReducer = (state = initialState, action) => {
     }
 
     case ActionType.GET_FILTERED_COINS_DATA: {
-      const filterCoins = (filter, onCoinsFilterClicked) => {
+      const filterCoins = (filter, onCoinsFilterClicked, dataForFiltration) => {
         if (filter === FILTER_ITEM.BY_NAME) {
           const sortBy = `name`;
 
           return onCoinsFilterClicked
-            ? getSortedArrayByAlphabetBackward(state.coinsData.data, sortBy)
-            : getSortedArrayByAlphabetForward(state.coinsData.data, sortBy);
+            ? getSortedArrayByAlphabetBackward(dataForFiltration, sortBy)
+            : getSortedArrayByAlphabetForward(dataForFiltration, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_PRICE) {
           const sortBy = `price_usd`;
 
           return onCoinsFilterClicked
-            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
-            : getSortedArrayByAscending(state.coinsData.data, sortBy);
+            ? getSortedArrayByDescending(dataForFiltration, sortBy)
+            : getSortedArrayByAscending(dataForFiltration, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_MARKET_CAP) {
           const sortBy = `market_cap_usd`;
 
           return onCoinsFilterClicked
-            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
-            : getSortedArrayByAscending(state.coinsData.data, sortBy);
+            ? getSortedArrayByDescending(dataForFiltration, sortBy)
+            : getSortedArrayByAscending(dataForFiltration, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_24H_VOLUME) {
           const sortBy = `volume24`;
 
           return onCoinsFilterClicked
-            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
-            : getSortedArrayByAscending(state.coinsData.data, sortBy);
+            ? getSortedArrayByDescending(dataForFiltration, sortBy)
+            : getSortedArrayByAscending(dataForFiltration, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_SUPPLY) {
           const sortBy = `tsupply`;
 
           return onCoinsFilterClicked
-            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
-            : getSortedArrayByAscending(state.coinsData.data, sortBy);
+            ? getSortedArrayByDescending(dataForFiltration, sortBy)
+            : getSortedArrayByAscending(dataForFiltration, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_1H) {
           const sortBy = `percent_change_1h`;
 
           return onCoinsFilterClicked
-            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
-            : getSortedArrayByAscending(state.coinsData.data, sortBy);
+            ? getSortedArrayByDescending(dataForFiltration, sortBy)
+            : getSortedArrayByAscending(dataForFiltration, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_24H) {
           const sortBy = `percent_change_24h`;
 
           return onCoinsFilterClicked
-            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
-            : getSortedArrayByAscending(state.coinsData.data, sortBy);
+            ? getSortedArrayByDescending(dataForFiltration, sortBy)
+            : getSortedArrayByAscending(dataForFiltration, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_7D) {
           const sortBy = `percent_change_7d`;
 
           return onCoinsFilterClicked
-            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
-            : getSortedArrayByAscending(state.coinsData.data, sortBy);
+            ? getSortedArrayByDescending(dataForFiltration, sortBy)
+            : getSortedArrayByAscending(dataForFiltration, sortBy);
         }
       };
 
@@ -143,7 +143,8 @@ const appReducer = (state = initialState, action) => {
         ...state,
         filteredCoinsData: filterCoins(
           action.filter,
-          action.onCoinsFilterClicked
+          action.onCoinsFilterClicked,
+          state.coinsData.data
         ),
       };
     }
