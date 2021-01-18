@@ -9,6 +9,10 @@ import {
 } from "./../actions/actions";
 
 import { STATUS_CODE, FILTER_ITEM } from "./../../helpers/const";
+import { getSortedArrayByAscending } from "./../../helpers/getSortedArrayByAscending";
+import { getSortedArrayByDescending } from "./../../helpers/getSortedArrayByDescending";
+import { getSortedArrayByAlphabetForward } from "./../../helpers/getSortedArrayByAlphabetForward";
+import { getSortedArrayByAlphabetBackward } from "./../../helpers/getSortedArrayByAlphabetBackward";
 
 import { appAPI } from "./../../api/api";
 
@@ -71,127 +75,67 @@ const appReducer = (state = initialState, action) => {
     case ActionType.GET_FILTERED_COINS_DATA: {
       const filterCoins = (filter, onCoinsFilterClicked) => {
         if (filter === FILTER_ITEM.BY_NAME) {
-          if (!onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort((a, b) => {
-              let nameA = a.name.toLowerCase(),
-                nameB = b.name.toLowerCase();
-              if (nameA < nameB) return -1;
-              if (nameA > nameB) return 1;
-              return 0;
-            });
-          }
+          const sortBy = `name`;
 
-          if (onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort((a, b) => {
-              let nameA = a.name.toLowerCase(),
-                nameB = b.name.toLowerCase();
-              if (nameA > nameB) return -1;
-              if (nameA < nameB) return 1;
-              return 0;
-            });
-          }
+          return onCoinsFilterClicked
+            ? getSortedArrayByAlphabetBackward(state.coinsData.data, sortBy)
+            : getSortedArrayByAlphabetForward(state.coinsData.data, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_PRICE) {
-          if (!onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort((a, b) => a.price_usd - b.price_usd);
-          }
+          const sortBy = `price_usd`;
 
-          if (onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort((a, b) => b.price_usd - a.price_usd);
-          }
+          return onCoinsFilterClicked
+            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
+            : getSortedArrayByAscending(state.coinsData.data, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_MARKET_CAP) {
-          if (!onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort(
-              (a, b) => a.market_cap_usd - b.market_cap_usd
-            );
-          }
+          const sortBy = `market_cap_usd`;
 
-          if (onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort(
-              (a, b) => b.market_cap_usd - a.market_cap_usd
-            );
-          }
+          return onCoinsFilterClicked
+            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
+            : getSortedArrayByAscending(state.coinsData.data, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_24H_VOLUME) {
-          if (!onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort((a, b) => a.volume24 - b.volume24);
-          }
+          const sortBy = `volume24`;
 
-          if (onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort((a, b) => b.volume24 - a.volume24);
-          }
+          return onCoinsFilterClicked
+            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
+            : getSortedArrayByAscending(state.coinsData.data, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_SUPPLY) {
-          if (!onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort((a, b) => a.tsupply - b.tsupply);
-          }
+          const sortBy = `tsupply`;
 
-          if (onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort((a, b) => b.tsupply - a.tsupply);
-          }
+          return onCoinsFilterClicked
+            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
+            : getSortedArrayByAscending(state.coinsData.data, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_1H) {
-          if (!onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort(
-              (a, b) => a.percent_change_1h - b.percent_change_1h
-            );
-          }
+          const sortBy = `percent_change_1h`;
 
-          if (onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort(
-              (a, b) => b.percent_change_1h - a.percent_change_1h
-            );
-          }
+          return onCoinsFilterClicked
+            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
+            : getSortedArrayByAscending(state.coinsData.data, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_24H) {
-          if (!onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort(
-              (a, b) => a.percent_change_24h - b.percent_change_24h
-            );
-          }
+          const sortBy = `percent_change_24h`;
 
-          if (onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort(
-              (a, b) => b.percent_change_24h - a.percent_change_24h
-            );
-          }
+          return onCoinsFilterClicked
+            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
+            : getSortedArrayByAscending(state.coinsData.data, sortBy);
         }
 
         if (filter === FILTER_ITEM.BY_7D) {
-          if (!onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort(
-              (a, b) => a.percent_change_7d - b.percent_change_7d
-            );
-          }
+          const sortBy = `percent_change_7d`;
 
-          if (onCoinsFilterClicked) {
-            let sortedArray = [...state.coinsData.data];
-            return sortedArray.sort(
-              (a, b) => b.percent_change_7d - a.percent_change_7d
-            );
-          }
+          return onCoinsFilterClicked
+            ? getSortedArrayByDescending(state.coinsData.data, sortBy)
+            : getSortedArrayByAscending(state.coinsData.data, sortBy);
         }
       };
 
